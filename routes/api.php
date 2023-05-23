@@ -23,4 +23,6 @@ Route::group(['prefix' => '/relationsheep'], function () {
     $controller = PostController::class;
 
     Route::get('/posts', [$controller, 'findAll']);
+
+    
 });
