@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TopicController;
@@ -26,4 +27,5 @@ Route::group(['prefix' => '/relationsheep'], function () {
 
     Route::get('/topics/{slug}/posts', [TopicController::class, 'findPostsBySlug']);
     Route::get('/tags/{tagSlug}/posts', [TagController::class, 'findPostsBySlug']);
+    Route::get('authors/{topicSlug}', [AuthorController::class, 'findByTopicSlug']);
 });

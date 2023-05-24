@@ -8,6 +8,15 @@ class PostController extends Controller
 {
     public function findAll()
     {
-        return Post::get();
+        $posts = Post::with('topic')->get();
+
+        return $posts->map(function ($post) {
+            return [
+                'id' => $post->id,
+                'title' => $post->title,
+                'content' => $post->content,
+                'topic' => $post->topic,
+            ];
+        });
     }
 }
