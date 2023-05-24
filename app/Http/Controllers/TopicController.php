@@ -6,7 +6,7 @@ use App\Models\Topic;
 
 class TopicController extends Controller
 {
-    function findPostsBySlug($slug)
+    public function findPostsBySlug($slug)
     {
         return Topic::where('slug', '=', $slug)
             ->first()

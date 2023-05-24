@@ -6,7 +6,7 @@ use App\Models\Tag;
 
 class TagController extends Controller
 {
-    function findPostsBySlug($tagSlug)
+    public function findPostsBySlug($tagSlug)
     {
         return Tag::where('slug', '=', $tagSlug)
             ->first()

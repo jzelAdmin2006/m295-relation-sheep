@@ -6,7 +6,7 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    function findAll()
+    public function findAll()
     {
         return Post::get();
     }
